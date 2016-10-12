@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div id="divMenu">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown active">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Home <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li><a href="settings_users_groups.aspx">Korisničke grupe</a></li>
+                            <li><a href="settings.aspx">Ostale postavke</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Organizacija <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Planer</a></li>
+                            <li><a href="#">Projekti</a></li>
+                            <li><a href="#">Transakcije</a></li>
+                            <li><a href="#">Proizvodi</a></li>
+                            <li><a href="#">Usluge</a></li>
+                            <li><a href="#">Resursi</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Zaposleni <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="employees.aspx">Zaposleni</a></li>
+                            <li><a href="employees_groups.aspx">Grupe zaposlenih</a></li>
+                            <li><a href="employees_salaries.aspx">Plate</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Klijenti <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="clients.aspx">Klijenti</a></li>
+                            <li><a href="clients_groups.aspx">Grupe klijenata</a></li>
+                            <li><a href="#">Page 1-3</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Kursevi <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Kursevi</a></li>
+                            <li><a href="#">Grupe kurseva</a></li>
+                            <li><a href="#">Page 1-3</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Biblioteka <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Biblioteka", "Index", "Library")</li>
+                            <li>@Html.ActionLink("Grupe", "Groups", "Library")</li>
+                            <li>@Html.ActionLink("Biblioteka", "Index", "Library")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Admin</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Admin.Models.LibraryItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LibraryItemGroup.GroupName)
+            <br />
+            @Html.DisplayNameFor(model => model.Active)
+            <br />
+            @Html.DisplayNameFor(model => model.LibraryItemTypeID)
+            <br />
+            @Html.DisplayNameFor(model => model.LanguageID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+            <br />
+            @Html.DisplayNameFor(model => model.Subtitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+            <br />
+            @Html.DisplayNameFor(model => model.Publisher)
+            <br />
+            @Html.DisplayNameFor(model => model.Translator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISBN)
+            <br />
+            @Html.DisplayNameFor(model => model.RegistrationCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LibraryItemGroup.GroupName)
+            <br />
+            @Html.DisplayFor(modelItem => item.Active)
+            <br />
+            @Html.DisplayFor(modelItem => item.LibraryItemTypeID)
+            <br />
+            @Html.DisplayFor(modelItem => item.LanguageID)
+        </td>
+        <td>
+            <b>@Html.DisplayFor(modelItem => item.Title)</b>
+            <br />
+            @Html.DisplayFor(modelItem => item.Subtitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+            <br />
+            @Html.DisplayFor(modelItem => item.Publisher)
+            <br />
+            @Html.DisplayFor(modelItem => item.Translator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISBN)
+            <br />
+            @Html.DisplayFor(modelItem => item.RegistrationCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LibraryItemID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LibraryItemID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LibraryItemID })
+        </td>
+    </tr>
+}
+
+</table>
